@@ -23,14 +23,14 @@ Termin oddania zadania: 3 kwietnia 2017, 20:00
 
 Running a program:
 
-./NarcoticMelodies <path> --start <number of songs> <length of each song> <X-dur>
+./NarcoticMelodies path --start number_of_songs length_of_each_song X-dur
 
-<path> is a path where you want your melodies to be stored (new folder is made)
+path is a path where you want your melodies to be stored (new folder is made)
 
 --start means it is a first run of a program - creates new random songs in a scale X
 
 and later, to mark output songs and generate new ones:
 
-./NarcoticMelodies generate <path> <mark0> <mark1> ... <mark n>
+./NarcoticMelodies path generate mark0 mark1 ... mark n
 
 mark should be in range of 0 to 10
