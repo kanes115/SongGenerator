@@ -21,18 +21,10 @@ class Dur:
         self.build()
 
     def build(self):
-        self.pitches = list( map(self.addd, self.intervals, self.pitches) )
+        self.pitches = list( map(lambda x, y: x + y, self.intervals, self.pitches) )
 
     def build_lowered(self):
-        self.pitches = list( map( lambda m: m - 13*3, list(map(self.addd, self.intervals, self.pitches)) ) )
-
-
-    #Private functions
-
-    @staticmethod
-    def addd(x, y):
-        return x + y
-
+        self.pitches = list( map( lambda m: m - 13*3, list(map(lambda x, y: x + y, self.intervals, self.pitches)) ) )
 
 
 class Tone:
@@ -59,7 +51,6 @@ class Tone:
 class Melody:
     melodiesCount = 0
     basename = "melody"
-
 
     def __init__(self, tempo=450, high_pitch_vel=93, low_pitch_vel=100, gama='C', length=200 ):
         self.length = length
@@ -95,8 +86,6 @@ class Melody:
         self.__make_random_tones()
 
     def add_note(self, start, end, pitch):
-        if start == 0:
-            print("Adding start = 0")
         if pitch in self.high_range:
             self.high_tones.append(Tone(start, end, pitch, self.high_pitch_vel))
         elif pitch in self.low_range:
@@ -246,8 +235,6 @@ class Parser:
         self.path = args.path
         self.builder = FileBuilder(self.path)
 
-
-
         if args.start and args.generate:
             raise Exception("Can't specify both start and generate.")
 
@@ -282,7 +269,6 @@ class Parser:
             return
 
         raise Exception("Error while parsing cmd.")
-
 
     def generate_start_songs(self, gama):
         for x in range(self.songs_amount):
@@ -323,11 +309,9 @@ class GeneticMixer:
         tempos = list( map( lambda x: x.tempo, self.pool ) )
         return int(sum(tempos) / len(tempos))
 
-
     def avg_highpitch_vel(self):
         high_pitch_vel = list( map( lambda x: x.high_pitch_vel, self.pool ) )
         return int(sum(high_pitch_vel) / len(high_pitch_vel))
-
 
     def avg_lowpitch_vel(self):
         low_pitch_vel = list( map( lambda x: x.low_pitch_vel, self.pool ) )
