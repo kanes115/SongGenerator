@@ -1,3 +1,5 @@
+Treść zadania 1. na laboratorium z Pythona:
+
 # Programowanie w jezyku Python 2016/2017 zadanie 1
 
 Uporczywe narkotyczne melodie potrafią czasem na długo przylgnąć do umysłu.
@@ -19,11 +21,16 @@ Termin oddania zadania: 3 kwietnia 2017, 20:00
 
 -----------------------
 
-Wywołanie programu:
+Running a program:
 
-./NarcoticMelodies start <path> <number of songs> <length of each song> <X-dur>
+./NarcoticMelodies <path> --start <number of songs> <length of each song> <X-dur>
 
-and later, to mark output songs and generate new
+<path> is a path where you want your melodies to be stored (new folder is made)
+
+--start means it is a first run of a program - creates new random songs in a scale X
+
+and later, to mark output songs and generate new ones:
 
 ./NarcoticMelodies generate <path> <mark0> <mark1> ... <mark n>
+
 mark should be in range of 0 to 10
