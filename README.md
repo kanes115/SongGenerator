@@ -31,6 +31,6 @@ path is a path where you want your melodies to be stored (new folder is made)
 
 and later, to mark output songs and generate new ones:
 
-./NarcoticMelodies path generate mark0 mark1 ... mark n
+./NarcoticMelodies path --generate mark0 mark1 ... mark n
 
 mark should be in range of 0 to 10
