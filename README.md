@@ -15,3 +15,15 @@ Program ten powinien wykorzystywać następujące elementy:
 Tresc zadania w Google Drive: https://goo.gl/dbfwo3
 
 Termin oddania zadania: 3 kwietnia 2017, 20:00
+
+
+-----------------------
+
+Wywołanie programu:
+
+./NarcoticMelodies start <path> <number of songs> <length of each song> <X-dur>
+
+and later, to mark output songs and generate new
+
+./NarcoticMelodies generate <path> <mark0> <mark1> ... <mark n>
+mark should be in range of 0 to 10
